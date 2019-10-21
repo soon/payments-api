@@ -69,3 +69,9 @@ tasks.register<JavaExec>("ktlint") {
     classpath = ktlint
     main = "com.github.shyiko.ktlint.Main"
 }
+
+tasks.withType<Test> {
+    testLogging {
+        events("PASSED", "FAILED", "SKIPPED")
+    }
+}
